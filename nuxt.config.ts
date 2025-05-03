@@ -1,6 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-11-01',
+  modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt'],
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt']
+  srcDir: 'src/',
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
 })
