@@ -1,0 +1,9 @@
+.default {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__container {
+    flex: 1;
+  }
+}
