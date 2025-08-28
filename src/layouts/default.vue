@@ -1,5 +1,5 @@
 <template>
-	<div id="app" class="default">
+	<div class="default">
 		<Header class="default__header" />
 
 		<main class="default__container">
@@ -11,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import Footer from '~components/footer/Footer.vue'
-import Header from '~components/header/Header.vue'
+	import Footer from '~/components/layout/footer/Footer.vue';
+	import Header from '~/components/layout/header/Header.vue';
 </script>
 
 <style scoped>

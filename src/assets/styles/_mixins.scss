@@ -1,0 +1,33 @@
+@use 'sass:map';
+
+@mixin media-min($breakpoint) {
+	$value: map.get($breakpoints, $breakpoint);
+
+	@media (min-width: $value) {
+		@content;
+	}
+}
+
+@mixin media-max($breakpoint) {
+	$value: map.get($breakpoints, $breakpoint);
+
+	@media (max-width: $value) {
+		@content;
+	}
+}
+
+@mixin media-between($from, $to) {
+	$min: map.get($breakpoints, $from);
+	$max: map.get($breakpoints, $to);
+
+	@media (min-width: $min) and (max-width: $max) {
+		@content;
+	}
+}
+
+@mixin fluid($minSize, $maxSize, $minW, $maxW) {
+	$slope: ($maxSize - $minSize) / ($maxW - $minW) * 100;
+	$intercept: $minSize - ($slope * $minW / 100);
+
+	font-size: clamp(#{$minSize}px, calc(#{$intercept}px + #{$slope}vw), #{$maxSize}px);
+}

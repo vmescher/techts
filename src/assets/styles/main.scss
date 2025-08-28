@@ -1,3 +1,42 @@
+html {
+	color-scheme: light dark;
+	font-size: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+body {
+	background-color: var(--white-10);
+	color: var(--black-50);
+	font-family: var(--primary-font), system-ui, -apple-system, sans-serif;
+	font-size: $font-size-base;
+	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+	font-weight: $font-weight-regular;
+	line-height: $line-height-base;
+}
+
+html, body, #__nuxt {
+	height: 100%;
+}
+
 #__nuxt {
-  height: 100%;
+	min-height: var(--app-height, 100vh);
+}
+
+:where(a,button,[tabindex],input,select,textarea):focus-visible {
+	outline: 2px solid var(--primary-50);
+	outline-offset: 2px;
+}
+
+a:hover {
+	text-decoration: underline;
 }
