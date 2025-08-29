@@ -1,11 +1,31 @@
-import type { RouteLocation } from '#vue-router';
+import type { RouteLocationRaw } from '#vue-router';
 
 export interface UiLinkProps {
-	to?: RouteLocation | string;
+	to?: RouteLocationRaw | string;
 	isExternalLink?: boolean;
+	target?: '_blank' | '_self';
+	disabled?: boolean;
+	theme?: 'default' | 'white';
+}
+
+export type UiLinkComponent = 'a' | typeof import('#components')['NuxtLink'] | 'div';
+
+interface BaseAttrs {
+	'aria-disabled'?: 'true';
+	'tabindex'?: number;
+}
+
+interface AnchorAttrs extends BaseAttrs {
+	href: string;
+	target: '_blank' | '_self';
+	rel?: string;
+}
+
+interface NuxtLinkAttrs extends BaseAttrs {
+	to: RouteLocationRaw | string;
 	target?: '_blank' | '_self';
 }
 
-export type UiLinkComponent = 'a' | Component | 'div';
+interface DivAttrs extends BaseAttrs {}
 
-export type UiLinkAttributes = { href: UiLinkProps['to']; target: string } | { to: UiLinkProps['to'] } | undefined;
+export type UiLinkAttributes = AnchorAttrs | NuxtLinkAttrs | DivAttrs;

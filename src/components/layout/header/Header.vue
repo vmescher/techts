@@ -6,6 +6,7 @@
 
 		<nav class="header__nav">
 			<UiLink to="/">
+				<UiIco name="menu" color="black" />
 				Ссылка
 			</UiLink>
 		</nav>
@@ -14,7 +15,8 @@
 </template>
 
 <script setup lang="ts">
-	import UiLink from '~components/ui/uiLink/UiLink.vue';
+	import UiIco from '@components/ui/uiIco/UiIco.vue';
+	import UiLink from '@components/ui/uiLink/UiLink.vue';
 </script>
 
 <style scoped>

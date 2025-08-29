@@ -31,3 +31,12 @@
 
 	font-size: clamp(#{$minSize}px, calc(#{$intercept}px + #{$slope}vw), #{$maxSize}px);
 }
+
+@mixin hover {
+	@media (hover: hover) and (pointer: fine) {
+		/* stylelint-disable-next-line nesting-selector-no-missing-scoping-root */
+		&:hover {
+			@content;
+		}
+	}
+}

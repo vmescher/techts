@@ -1,14 +1,22 @@
 <template>
-	<component :is="component" v-bind="attributes" class="ui-link">
+	<component :is="component" v-bind="attributes" class="ui-link" :class="classNames">
+		<span v-if="$slots['icon-left']" class="ui-link__icon">
+			<slot name="icon-left" />
+		</span>
+
 		<slot />
+
+		<span v-if="$slots['icon-right']" class="ui-link__icon">
+			<slot name="icon-right" />
+		</span>
 	</component>
 </template>
 
 <script setup lang="ts">
-	import type { UiLinkAttributes, UiLinkComponent, UiLinkProps } from '~components/ui/uiLink/interfaces';
+	import type { UiLinkAttributes, UiLinkComponent, UiLinkProps } from '@ui/uiLink/interfaces';
 	import { NuxtLink } from '#components';
 
-	const { isExternalLink, to, target } = defineProps<UiLinkProps>();
+	const { isExternalLink, to, target, disabled, theme } = defineProps<UiLinkProps>();
 
 	const component = computed<UiLinkComponent>(() => {
 		if (isExternalLink) {
@@ -23,18 +31,43 @@
 	});
 
 	const attributes = computed<UiLinkAttributes>(() => {
+		const attrs: Record<string, any> = {};
+		const isDisabled = disabled || !to;
+
+		if (isDisabled) {
+			attrs['aria-disabled'] = 'true';
+			attrs.tabindex = -1;
+		}
+
 		if (isExternalLink) {
-			return { href: to, target: target ?? '_blank' };
+			if (!isDisabled) {
+				attrs.href = to;
+				attrs.target = target ?? '_blank';
+
+				if (target === '_blank') {
+					attrs.rel = 'noopener noreferrer';
+				}
+			}
+			return attrs as UiLinkAttributes;
 		}
 
-		if (to) {
-			return { to, target };
+		if (!isDisabled) {
+			attrs.to = to;
+
+			if (target) {
+				attrs.target = target;
+			}
 		}
 
-		return undefined;
+		return attrs as UiLinkAttributes;
+	});
+
+	const classNames = computed(() => {
+		return {
+			'ui-link--disabled': disabled,
+			[`ui-link--theme-${theme}`]: theme,
+		};
 	});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped src="@ui/uiLink/styles/ui-link.scss" lang="scss" />

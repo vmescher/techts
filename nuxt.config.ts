@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'node:url';
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 export default defineNuxtConfig({
 	modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt'],
@@ -21,10 +22,22 @@ export default defineNuxtConfig({
 				},
 			},
 		},
+		plugins: [
+			createSvgIconsPlugin({
+				iconDirs: [fileURLToPath(new URL('./src/assets/icons', import.meta.url))],
+				svgoOptions: {
+					plugins: [
+						'preset-default',
+						'removeDimensions',
+						{ name: 'removeAttrs', params: { attrs: '(fill|stroke)' } },
+					],
+				},
+			}),
+		],
 	},
 	alias: {
-		'~components': fileURLToPath(new URL('./src/components', import.meta.url)),
-		'~ui-components': fileURLToPath(new URL('./src/components/ui', import.meta.url)),
+		'@components': fileURLToPath(new URL('./src/components', import.meta.url)),
+		'@ui': fileURLToPath(new URL('./src/components/ui', import.meta.url)),
 	},
 	eslint: {
 		config: {
