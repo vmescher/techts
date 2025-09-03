@@ -2,14 +2,31 @@ import { fileURLToPath } from 'node:url';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 export default defineNuxtConfig({
-	modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt'],
+	modules: ['@nuxtjs/i18n', '@nuxt/eslint', '@nuxt/image', '@pinia/nuxt'],
 	devtools: { enabled: true },
+	runtimeConfig: {
+		apiSecret: '',
+		public: {
+			apiBase: process.env.NUXT_PUBLIC_API_BASE || 'http://localhost:3000',
+			http: {
+				timeoutMs: 15_000,
+				retry: 0,
+			},
+		},
+	},
 	srcDir: 'src/',
 	css: [
 		'~/assets/styles/reset.scss',
 		'~/assets/styles/variables.scss',
 		'~/assets/styles/fonts.scss',
 		'~/assets/styles/main.scss',
+	],
+	components: [
+		{
+			path: '~/components/ui',
+			extensions: ['vue'],
+			pathPrefix: false,
+		},
 	],
 	vite: {
 		css: {
@@ -52,5 +69,18 @@ export default defineNuxtConfig({
 				minPixelValue: 4,
 			},
 		},
+	},
+	i18n: {
+		locales: [
+			{ code: 'en', language: 'en-US', name: 'English' },
+			{ code: 'ru', language: 'ru-RU', name: 'Русский' },
+		],
+		defaultLocale: 'ru',
+		detectBrowserLanguage: {
+			useCookie: true,
+			cookieKey: 'i18n_redirected',
+			redirectOn: 'root',
+		},
+		vueI18n: '/i18n/i18n.config.ts',
 	},
 });

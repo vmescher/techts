@@ -4,19 +4,25 @@
 			<img src="/img/logo.svg" alt="">
 		</NuxtLink>
 
-		<nav class="header__nav">
-			<UiLink to="/">
-				<UiIco name="menu" color="black" />
-				Ссылка
-			</UiLink>
-		</nav>
-		<span>HEADER</span>
+		<HeaderNavigation />
+		<HeaderTest />
+
+		<NuxtLink v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)">
+			{{ locale.name }}
+		</NuxtLink>
 	</header>
 </template>
 
 <script setup lang="ts">
-	import UiIco from '@components/ui/uiIco/UiIco.vue';
-	import UiLink from '@components/ui/uiLink/UiLink.vue';
+	import HeaderNavigation from '@components/layout/header/HeaderNavigation.vue';
+	import HeaderTest from '@components/layout/header/HeaderTest.vue';
+
+	const { locale, locales } = useI18n();
+	const switchLocalePath = useSwitchLocalePath();
+
+	const availableLocales = computed(() => {
+		return locales.value.filter(i => i.code !== locale.value);
+	});
 </script>
 
 <style scoped>

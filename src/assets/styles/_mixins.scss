@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:selector';
 
 @mixin media-min($breakpoint) {
 	$value: map.get($breakpoints, $breakpoint);
@@ -32,11 +33,11 @@
 	font-size: clamp(#{$minSize}px, calc(#{$intercept}px + #{$slope}vw), #{$maxSize}px);
 }
 
-@mixin hover {
+@mixin hover($sel: &) {
 	@media (hover: hover) and (pointer: fine) {
-		/* stylelint-disable-next-line nesting-selector-no-missing-scoping-root */
-		&:hover {
+		@at-root #{selector.append($sel, ':hover')} {
 			@content;
 		}
 	}
 }
+

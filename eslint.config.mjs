@@ -27,6 +27,7 @@ export default withNuxt(
 		},
 		rules: {
 			'no-console': 'warn',
+			'node/prefer-global/process': 'off',
 		},
 		typescript: {
 			strict: true,

@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-	import type { UiLinkAttributes, UiLinkComponent, UiLinkProps } from '@ui/uiLink/interfaces';
+	import type { UiLinkAttributes, UiLinkComponent, UiLinkProps } from '@ui/uiLink/types';
 	import { NuxtLink } from '#components';
 
 	const { isExternalLink, to, target, disabled, theme } = defineProps<UiLinkProps>();

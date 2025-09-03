@@ -1,6 +1,5 @@
 .ui-link {
 	--link-gap: #{$gutter * 3};
-	--link-icon-size: 24px;
 
 	// Typography
 	--link-font-family: var(--primary-font);
@@ -71,8 +70,6 @@
 	&__icon {
 		color: currentcolor;
 		flex-shrink: 0;
-		height: var(--link-icon-size);
-		width: var(--link-icon-size);
 	}
 
 	&--theme {
