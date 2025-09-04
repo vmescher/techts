@@ -5,7 +5,6 @@
 		</NuxtLink>
 
 		<HeaderNavigation />
-		<HeaderTest />
 
 		<NuxtLink v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)">
 			{{ locale.name }}
@@ -15,7 +14,6 @@
 
 <script setup lang="ts">
 	import HeaderNavigation from '@components/layout/header/HeaderNavigation.vue';
-	import HeaderTest from '@components/layout/header/HeaderTest.vue';
 
 	const { locale, locales } = useI18n();
 	const switchLocalePath = useSwitchLocalePath();

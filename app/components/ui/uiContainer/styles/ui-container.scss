@@ -1,0 +1,14 @@
+.ui-container {
+	margin-inline: auto;
+	max-width: 1400px;
+	padding-inline: fluid($gutter * 3, $gutter * 4);
+	width: 100%;
+
+	&--clear {
+		padding-inline: 0;
+	}
+
+	&--fluid  {
+		max-width: none;
+	}
+}

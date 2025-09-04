@@ -2,9 +2,9 @@
 	<div class="default">
 		<Header class="default__header" />
 
-		<main class="default__container">
+		<UiContainer tag="main" class="default__main">
 			<slot />
-		</main>
+		</UiContainer>
 
 		<Footer class="default__footer" />
 	</div>
@@ -15,6 +15,4 @@
 	import Header from '~/components/layout/header/Header.vue';
 </script>
 
-<style scoped>
-    @import "~/layouts/styles/default/default.scss";
-</style>
+<style lang="scss" src="~/layouts/styles/default/default.scss" scoped />

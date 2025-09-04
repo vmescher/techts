@@ -1,0 +1,19 @@
+@use 'sass:math';
+@use 'sass:meta';
+
+@function strip-unit($value) {
+	@if meta.type-of($value) == 'number' and not math.is-unitless($value) {
+		@return math.div($value, ($value * 0 + 1));
+	}
+
+	@return $value;
+}
+
+@function fluid($minSize, $maxSize, $minW: 320, $maxW: 1440) {
+	$min-size: strip-unit($minSize);
+	$max-size: strip-unit($maxSize);
+	$slope: math.div($max-size - $min-size, $maxW - $minW) * 100;
+	$intercept: $min-size - math.div($slope * $minW, 100);
+
+	@return clamp(#{$min-size}px, calc(#{$intercept}px + #{$slope}vw), #{$max-size}px);
+}

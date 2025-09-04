@@ -26,13 +26,6 @@
 	}
 }
 
-@mixin fluid($minSize, $maxSize, $minW, $maxW) {
-	$slope: ($maxSize - $minSize) / ($maxW - $minW) * 100;
-	$intercept: $minSize - ($slope * $minW / 100);
-
-	font-size: clamp(#{$minSize}px, calc(#{$intercept}px + #{$slope}vw), #{$maxSize}px);
-}
-
 @mixin hover($sel: &) {
 	@media (hover: hover) and (pointer: fine) {
 		@at-root #{selector.append($sel, ':hover')} {
