@@ -16,7 +16,7 @@
 	import type { UiLinkAttributes, UiLinkComponent, UiLinkProps } from '@ui/uiLink/types';
 	import { NuxtLink } from '#components';
 
-	const { isExternalLink, to, target, disabled, theme } = defineProps<UiLinkProps>();
+	const { isExternalLink, to, target, disabled, theme = 'default', additionalAttrs } = defineProps<UiLinkProps>();
 
 	const component = computed<UiLinkComponent>(() => {
 		if (isExternalLink) {
@@ -39,13 +39,17 @@
 			attrs.tabindex = -1;
 		}
 
+		if (additionalAttrs) {
+			Object.assign(attrs, additionalAttrs);
+		}
+
 		if (isExternalLink) {
 			if (!isDisabled) {
 				attrs.href = to;
 				attrs.target = target ?? '_blank';
 
-				if (target === '_blank') {
-					attrs.rel = 'noopener noreferrer';
+				if ((attrs.target as string) === '_blank') {
+					attrs.rel = attrs.rel ? `${attrs.rel} noopener noreferrer` : 'noopener noreferrer';
 				}
 			}
 			return attrs as UiLinkAttributes;

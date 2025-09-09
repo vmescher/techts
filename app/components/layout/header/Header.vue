@@ -1,28 +1,25 @@
 <template>
 	<header class="header">
-		<NuxtLink to="/" class="header__logo">
-			<img src="/img/logo.svg" alt="">
-		</NuxtLink>
+		<UiContainer fluid class="header__container">
+			<NuxtLink to="/" class="header__logo">
+				<img src="/img/logo.svg" alt="">
+			</NuxtLink>
 
-		<HeaderNavigation />
+			<HeaderNavigation class="header__navigation" />
+			<HeaderContacts class="header__contacts" />
 
-		<NuxtLink v-for="locale in availableLocales" :key="locale.code" :to="switchLocalePath(locale.code)">
-			{{ locale.name }}
-		</NuxtLink>
+			<UiButton>
+				Оставить заявку
+			</UiButton>
+		</UiContainer>
 	</header>
 </template>
 
 <script setup lang="ts">
-	import HeaderNavigation from '@components/layout/header/HeaderNavigation.vue';
+	import HeaderContacts from '@components/layout/header/components/headerContacts/HeaderContacts.vue';
+	import HeaderNavigation from '@components/layout/header/components/headerNavigation/HeaderNavigation.vue';
 
-	const { locale, locales } = useI18n();
-	const switchLocalePath = useSwitchLocalePath();
-
-	const availableLocales = computed(() => {
-		return locales.value.filter(i => i.code !== locale.value);
-	});
+	await loadDictionary('header');
 </script>
 
-<style scoped>
-
-</style>
+<style src="@components/layout/header/styles/header.scss" scoped />

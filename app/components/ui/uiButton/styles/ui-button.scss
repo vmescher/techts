@@ -1,0 +1,112 @@
+.ui-button {
+	--btn-gap: #{$gutter * 6};
+	--btn-min-height: 53px;
+
+	// Typography
+	--btn-font-family: var(--primary-font);
+	--btn-font-size: #{$font-size-s};
+	--btn-line-height: 1.2;
+	--btn-font-weight: #{$font-weight-medium};
+	--btn-text-transform: none;
+
+	// Color
+	--btn-color: var(--black-50);
+	--btn-color-hover: var(--black-50);
+	--btn-color-focus: var(--black-50);
+
+	// TODO: Активный цвет для ссылок
+	--btn-color-active: var(--black-50);
+
+	// TODO: Заблокированный цвет для ссылок
+	--btn-color-disabled: var(--primary-10);
+
+	// Background
+	--btn-bg: var(--gray-10);
+	--btn-bg-hover: var(--primary-10);
+	--btn-bg-focus: var(--primary-10);
+
+	// TODO: Активный цвет для кнопок
+	--btn-bg-active: var(--primary-10);
+
+	// TODO: Заблокированный фон для кнопок
+	--btn-bg-disabled: var(--gray-30);
+
+	// Border
+	--btn-border-thickness: 2px;
+	--btn-border-style: solid;
+	--btn-border-radius: 100px;
+	--btn-border-color: transparent;
+	--btn-border-hover-color: transparent;
+	--btn-border-focus-color: transparent;
+	--btn-border-active-color: transparent;
+	--btn-border-disabled-color: transparent;
+
+	// Outline
+	--btn-outline-thickness: 2px;
+	--btn-outline-offset: #{$gutter};
+	--btn-outline-color: var(--btn-color);
+
+	align-items: center;
+	background-color: var(--btn-bg);
+	border: var(--btn-border-thickness) var(--btn-border-style) var(--btn-border-color);
+	border-radius: var(--btn-border-radius);
+	color: var(--btn-color);
+	cursor: pointer;
+	display: inline-flex;
+	font-family: var(--btn-font-family);
+	font-size: var(--btn-font-size);
+	font-weight: var(--btn-font-weight);
+	gap: var(--btn-gap);
+	justify-content: space-between;
+	line-height: var(--btn-line-height);
+	min-height: var(--btn-min-height);
+	padding-block: $gutter * 3;
+	padding-inline: $gutter * 6;
+	text-decoration: none;
+	transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+	user-select: none;
+
+	&:focus-visible {
+		outline: var(--btn-outline-thickness) solid var(--btn-outline-color);
+		outline-offset: var(--btn-outline-offset);
+	}
+
+	@include hover {
+		--btn-color: var(--btn-color-hover);
+		--btn-bg: var(--btn-bg-hover);
+		--btn-border-color: var(--btn-border-hover-color);
+	}
+
+	&:active {
+		--btn-color: var(--btn-color-active);
+		--btn-bg: var(--btn-bg-active);
+		--btn-border-color: var(--btn-border-active-color);
+	}
+
+	&[aria-disabled='true'],
+	&:disabled,
+	&--disabled {
+		--btn-color: var(--btn-color-disabled);
+		--btn-bg: var(--btn-bg-disabled);
+		--btn-border-color: var(--btn-border-disabled-color);
+
+		cursor: default;
+		pointer-events: none;
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	&__icon {
+		color: currentcolor;
+		display: inline-flex;
+		flex-shrink: 0;
+	}
+
+	&--theme {
+		&-white {
+
+		}
+	}
+}

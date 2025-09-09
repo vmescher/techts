@@ -1,4 +1,5 @@
 import type { RouteLocationRaw } from '#vue-router';
+import type { AnchorHTMLAttributes } from 'vue';
 
 export interface UiLinkProps {
 	to?: RouteLocationRaw | string;
@@ -6,11 +7,12 @@ export interface UiLinkProps {
 	target?: '_blank' | '_self';
 	disabled?: boolean;
 	theme?: 'default' | 'white';
+	additionalAttrs?: AnchorHTMLAttributes;
 }
 
 export type UiLinkComponent = 'a' | typeof import('#components')['NuxtLink'] | 'div';
 
-interface BaseAttrs {
+interface BaseAttrs extends AnchorHTMLAttributes {
 	'aria-disabled'?: 'true';
 	'tabindex'?: number;
 }

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>Главная</h1>
+		<h1>Каталог</h1>
 	</div>
 </template>
 
@@ -8,6 +8,6 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

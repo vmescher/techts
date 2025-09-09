@@ -1,0 +1,16 @@
+.header {
+	&__logo {
+		flex: 0 0 85px;
+	}
+
+	&__container {
+		align-items: center;
+		display: flex;
+		gap: $gutter * 10;
+		padding-block: $gutter * 5;
+	}
+
+	&__navigation {
+		margin-right: auto;
+	}
+}
