@@ -2,5 +2,5 @@
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
-	gap: fluid($gutter * 4, $gutter * 6);
+	gap: fluid($gutter * 4, $gutter * 6, $laptop, $laptop-xxl);
 }

@@ -1,7 +1,7 @@
 <template>
-	<nav class="header-navigation">
+	<nav ref="navEl" class="header-navigation">
 		<UiLink
-			v-for="(link, index) in headerNavigationLinks"
+			v-for="(link, index) in visibleItems"
 			:key="`${link.to}-${index}`"
 			class="header-navigation__link"
 			:to="link.to"
@@ -18,8 +18,11 @@
 <script setup lang="ts">
 	import type { HeaderNavigationItem } from '@components/layout/header/components/headerNavigation/types/HeaderNavigationItem';
 	import { UiIconSize } from '@ui/uiIcon/types';
+	import { useResizableList } from '~/features/observers/useResizableList';
 
 	const { t } = useI18n();
+
+	const navEl = useTemplateRef<HTMLElement>('navEl');
 
 	const headerNavigationLinks: HeaderNavigationItem[] = [
 		{
@@ -44,6 +47,12 @@
 			to: '#contacts',
 		},
 	];
+
+	const { visibleItems } = useResizableList({
+		target: navEl,
+		items: headerNavigationLinks,
+		minVisibleAmount: 2,
+	});
 </script>
 
 <style src="@components/layout/header/components/headerNavigation/styles/header-navigation.scss" lang="scss" scoped />

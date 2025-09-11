@@ -1,9 +1,9 @@
 .ui-link {
-	--link-gap: #{$gutter * 3};
+	--link-gap: #{fluid($gutter * 2, $gutter * 3, $laptop, $laptop-xxl)};
 
 	// Typography
 	--link-font-family: var(--primary-font);
-	--link-font-size: #{$font-size-s};
+	--link-font-size: #{fluid($font-size-xs, $font-size-s, $laptop, $laptop-xxl)};
 	--link-line-height: 1;
 	--link-font-weight: #{$font-weight-medium};
 	--link-text-transform: none;

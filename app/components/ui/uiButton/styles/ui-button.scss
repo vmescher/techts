@@ -1,10 +1,10 @@
 .ui-button {
-	--btn-gap: #{$gutter * 6};
+	--btn-gap: #{fluid($gutter * 3, $gutter * 6, $laptop, $laptop-xxl)};
 	--btn-min-height: 53px;
 
 	// Typography
 	--btn-font-family: var(--primary-font);
-	--btn-font-size: #{$font-size-s};
+	--btn-font-size: #{fluid($font-size-xs, $font-size-s, $laptop, $laptop-xxl)};
 	--btn-line-height: 1.2;
 	--btn-font-weight: #{$font-weight-medium};
 	--btn-text-transform: none;
@@ -61,10 +61,15 @@
 	line-height: var(--btn-line-height);
 	min-height: var(--btn-min-height);
 	padding-block: $gutter * 3;
-	padding-inline: $gutter * 6;
+	padding-inline: fluid($gutter * 4, $gutter * 6, $laptop, $laptop-xxl);
 	text-decoration: none;
 	transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 	user-select: none;
+
+	@include media-max($laptop-xxl) {
+		--btn-min-height: 44px;
+		--btn-line-height: 1.1;
+	}
 
 	&:focus-visible {
 		outline: var(--btn-outline-thickness) solid var(--btn-outline-color);
@@ -102,11 +107,5 @@
 		color: currentcolor;
 		display: inline-flex;
 		flex-shrink: 0;
-	}
-
-	&--theme {
-		&-white {
-
-		}
 	}
 }

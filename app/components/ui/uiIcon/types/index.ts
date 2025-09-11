@@ -1,10 +1,10 @@
 export enum UiIconSize {
-	S16 = 16,
-	S20 = 20,
-	S22 = 22,
-	S24 = 24,
-	S32 = 32,
-	S48 = 48,
+	S16 = 'xs',
+	S20 = 's',
+	S22 = 'm',
+	S24 = 'l',
+	S32 = 'xl',
+	S48 = 'xxl',
 }
 
 export interface UiIconProps {

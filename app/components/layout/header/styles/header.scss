@@ -1,16 +1,30 @@
 .header {
 	&__logo {
-		flex: 0 0 85px;
+		flex-basis: 85px;
+
+		@include media-max($laptop-xxl) {
+			flex-basis: 70px;
+		}
 	}
 
 	&__container {
 		align-items: center;
 		display: flex;
 		gap: $gutter * 10;
-		padding-block: $gutter * 5;
+		padding-block: fluid($gutter * 4, $gutter * 5, $laptop, $laptop-xxl);
+
+		@include media-max($laptop-xxl) {
+			gap: fluid($gutter * 4, $gutter * 6, $laptop, $laptop-xxl);
+		}
 	}
 
 	&__navigation {
 		margin-right: auto;
+	}
+
+	&__contacts,
+	&__logo,
+	&__callback {
+		flex-shrink: 0;
 	}
 }

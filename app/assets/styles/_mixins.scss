@@ -2,26 +2,19 @@
 @use 'sass:selector';
 
 @mixin media-min($breakpoint) {
-	$value: map.get($breakpoints, $breakpoint);
-
-	@media (min-width: $value) {
+	@media (min-width: $breakpoint) {
 		@content;
 	}
 }
 
 @mixin media-max($breakpoint) {
-	$value: map.get($breakpoints, $breakpoint);
-
-	@media (max-width: $value) {
+	@media (max-width: $breakpoint) {
 		@content;
 	}
 }
 
 @mixin media-between($from, $to) {
-	$min: map.get($breakpoints, $from);
-	$max: map.get($breakpoints, $to);
-
-	@media (min-width: $min) and (max-width: $max) {
+	@media (min-width: $from) and (max-width: $to) {
 		@content;
 	}
 }

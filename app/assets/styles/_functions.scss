@@ -12,8 +12,10 @@
 @function fluid($minSize, $maxSize, $minW: 320, $maxW: 1440) {
 	$min-size: strip-unit($minSize);
 	$max-size: strip-unit($maxSize);
-	$slope: math.div($max-size - $min-size, $maxW - $minW) * 100;
-	$intercept: $min-size - math.div($slope * $minW, 100);
+	$min-width: strip-unit($minW);
+	$max-width: strip-unit($maxW);
+	$slope: math.div($max-size - $min-size, $max-width - $min-width) * 100;
+	$intercept: $min-size - math.div($slope * $min-width, 100);
 
 	@return clamp(#{$min-size}px, calc(#{$intercept}px + #{$slope}vw), #{$max-size}px);
 }

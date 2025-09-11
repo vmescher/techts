@@ -8,8 +8,8 @@
 			<HeaderNavigation class="header__navigation" />
 			<HeaderContacts class="header__contacts" />
 
-			<UiButton>
-				Оставить заявку
+			<UiButton class="header__callback">
+				<span>Оставить заявку</span>
 			</UiButton>
 		</UiContainer>
 	</header>

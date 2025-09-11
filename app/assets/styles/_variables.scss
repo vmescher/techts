@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 // BREAKPOINTS
 $breakpoints: (
 	mobile: 375px,
@@ -7,6 +9,12 @@ $breakpoints: (
 	laptop-xxl: 1440px,
 	pc: 1920px,
 );
+$mobile: map.get($breakpoints, mobile);
+$tablet: map.get($breakpoints, tablet);
+$laptop: map.get($breakpoints, laptop);
+$laptop-xl: map.get($breakpoints, laptop-xl);
+$laptop-xxl: map.get($breakpoints, laptop-xxl);
+$pc: map.get($breakpoints, pc);
 
 // FONT BASIS
 $font-size-base: 16px;
