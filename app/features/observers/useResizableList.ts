@@ -55,35 +55,42 @@ export function useResizableList<T>({
 		}
 	};
 
-	const updatePlusChild = async () => {
-		const maxOffset = getMaxOffset();
-		const offset = getOffsetLastChild();
-		const newVisibleAmount = unref(visibleAmount) + 1;
-
-		if (offset <= maxOffset && newVisibleAmount <= unref(maxItemsAmount)) {
-			setVisibleAmount(newVisibleAmount);
+	const growUntilFits = async () => {
+		while (
+			visibleAmount.value < unref(maxItemsAmount)
+			&& getOffsetLastChild() <= getMaxOffset()
+		) {
+			setVisibleAmount(visibleAmount.value + 1);
 			await nextTick();
-			await updatePlusChild();
+		}
+
+		if (getOffsetLastChild() > getMaxOffset()) {
+			setVisibleAmount(visibleAmount.value - 1);
 		}
 	};
 
-	const updateMinusChild = async () => {
-		const maxOffset = getMaxOffset();
-		const offset = getOffsetLastChild();
-		const newVisibleAmount = unref(visibleAmount) - 1;
-
-		if (offset > maxOffset && newVisibleAmount >= unref(minVisibleAmount)) {
-			setVisibleAmount(newVisibleAmount);
+	const shrinkUntilFits = async () => {
+		while (
+			visibleAmount.value > unref(minVisibleAmount)
+			&& getOffsetLastChild() > getMaxOffset()
+		) {
+			setVisibleAmount(visibleAmount.value - 1);
 			await nextTick();
-			await updateMinusChild();
 		}
 	};
 
 	const updateAmount = async () => {
 		await nextTick();
 		await runTemporaryStyle(async () => {
-			await updatePlusChild();
-			await updateMinusChild();
+			const offset = getOffsetLastChild();
+			const max = getMaxOffset();
+
+			if (offset <= max) {
+				await growUntilFits();
+			}
+			else {
+				await shrinkUntilFits();
+			}
 		});
 	};
 
@@ -96,7 +103,7 @@ export function useResizableList<T>({
 
 	onMounted(async () => {
 		window.addEventListener('resize', debouncedUpdateAmount);
-		await debouncedUpdateAmount();
+		await updateAmount();
 	});
 
 	onUnmounted(() => {
