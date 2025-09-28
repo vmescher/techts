@@ -9,11 +9,12 @@ export function useResizableList<T>({
 	items: MaybeRef<T[]>;
 	minVisibleAmount?: MaybeRef<number>;
 }) {
-	const visibleAmount = ref(0);
-
 	const maxItemsAmount = computed(() => unref(items).length);
+	const visibleAmount = ref(unref(maxItemsAmount));
+
 	const visibleItems = computed(() => unref(items).slice(0, unref(visibleAmount)));
 	const invisibleItems = computed(() => unref(items).slice(unref(visibleAmount)));
+	const hasInvisibleItems = computed(() => unref(invisibleItems).length > 0);
 
 	const setVisibleAmount = (value: number) => {
 		visibleAmount.value = value;
@@ -113,5 +114,6 @@ export function useResizableList<T>({
 	return {
 		visibleItems,
 		invisibleItems,
+		hasInvisibleItems,
 	};
 }

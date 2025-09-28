@@ -51,7 +51,6 @@ export default defineNuxtConfig({
 					plugins: [
 						'preset-default',
 						'removeDimensions',
-						{ name: 'removeAttrs', params: { attrs: '(fill|stroke)' } },
 					],
 				},
 			}),

@@ -25,6 +25,8 @@
 	--link-underline-color: var(--link-color);
 
 	align-items: center;
+	background: none;
+	border: none;
 	border-radius: 100px;
 	color: var(--link-color);
 	display: inline-flex;
@@ -54,7 +56,6 @@
 	}
 
 	&[aria-disabled='true'],
-	&:not([href]),
 	&--disabled {
 		--link-color: var(--link-color-disabled);
 

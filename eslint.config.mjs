@@ -23,6 +23,7 @@ export default withNuxt(
 				}],
 				'@stylistic/indent': 'off',
 				'vue/html-self-closing': 'off',
+				'antfu/top-level-function': 'off',
 			},
 		},
 		rules: {

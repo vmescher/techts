@@ -9,7 +9,7 @@
 			<HeaderContacts class="header__contacts" />
 
 			<UiButton class="header__callback">
-				<span>Оставить заявку</span>
+				{{ t('header_callback_btn') }}
 			</UiButton>
 		</UiContainer>
 	</header>
@@ -20,6 +20,8 @@
 	import HeaderNavigation from '@components/layout/header/components/headerNavigation/HeaderNavigation.vue';
 
 	await loadDictionary('header');
+
+	const { t } = useI18n();
 </script>
 
 <style src="@components/layout/header/styles/header.scss" scoped />

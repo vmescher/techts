@@ -4,13 +4,14 @@ import type { AnchorHTMLAttributes } from 'vue';
 export interface UiLinkProps {
 	to?: RouteLocationRaw | string;
 	isExternalLink?: boolean;
+	isButton?: boolean;
 	target?: '_blank' | '_self';
 	disabled?: boolean;
 	theme?: 'default' | 'white';
 	additionalAttrs?: AnchorHTMLAttributes;
 }
 
-export type UiLinkComponent = 'a' | typeof import('#components')['NuxtLink'] | 'div';
+export type UiLinkComponent = 'a' | typeof import('#components')['NuxtLink'] | 'div' | 'button';
 
 interface BaseAttrs extends AnchorHTMLAttributes {
 	'aria-disabled'?: 'true';

@@ -2,7 +2,6 @@
 	align-items: center;
 	display: flex;
 	gap: fluid($gutter * 4, $gutter * 6, $laptop, $laptop-xxl);
-	overflow: hidden;
 
 	&__link {
 		white-space: nowrap;

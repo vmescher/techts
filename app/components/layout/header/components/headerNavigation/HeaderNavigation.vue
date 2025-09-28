@@ -1,8 +1,8 @@
 <template>
 	<nav ref="navEl" class="header-navigation">
 		<UiLink
-			v-for="(link, index) in visibleItems"
-			:key="`${link.to}-${index}`"
+			v-for="link in visibleItems"
+			:key="link.id"
 			class="header-navigation__link"
 			:to="link.to"
 		>
@@ -12,6 +12,28 @@
 
 			{{ t(link.titleKey) }}
 		</UiLink>
+
+		<UiDropdown v-if="hasInvisibleItems" class="header-navigation__dropdown">
+			<template #trigger="{ attrs }">
+				<UiLink is-button v-bind="attrs" class="header-navigation__link">
+					{{ t('header_nav_more') }}
+					<template #icon-right>
+						<UiIcon name="chevron_down" :size="UiIconSize.S24" />
+					</template>
+				</UiLink>
+			</template>
+
+			<template #default>
+				<UiLink
+					v-for="link in invisibleItems"
+					:key="link.id"
+					class="header-navigation__link"
+					:to="link.to"
+				>
+					{{ t(link.titleKey) }}
+				</UiLink>
+			</template>
+		</UiDropdown>
 	</nav>
 </template>
 
@@ -26,29 +48,34 @@
 
 	const headerNavigationLinks: HeaderNavigationItem[] = [
 		{
+			id: useId(),
 			titleKey: 'header_nav_catalog',
 			to: '/catalog',
 			icon: 'menu',
 		},
 		{
-			titleKey: 'header_nav_about',
-			to: '#about',
-		},
-		{
-			titleKey: 'header_nav_brands',
-			to: '#brands',
-		},
-		{
+			id: useId(),
 			titleKey: 'header_nav_payment',
 			to: '#payment',
 		},
 		{
+			id: useId(),
 			titleKey: 'header_nav_contacts',
 			to: '#contacts',
 		},
+		{
+			id: useId(),
+			titleKey: 'header_nav_about',
+			to: '#about',
+		},
+		{
+			id: useId(),
+			titleKey: 'header_nav_brands',
+			to: '#brands',
+		},
 	];
 
-	const { visibleItems } = useResizableList({
+	const { visibleItems, invisibleItems, hasInvisibleItems } = useResizableList({
 		target: navEl,
 		items: headerNavigationLinks,
 		minVisibleAmount: 2,

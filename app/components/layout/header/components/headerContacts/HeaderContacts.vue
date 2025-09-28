@@ -1,20 +1,20 @@
 <template>
 	<nav class="header-contacts">
 		<UiLink
-			v-for="(item, index) in headerContactsItems"
-			:key="`${item.href}-${index}`"
+			v-for="contact in headerContactsItems"
+			:key="contact.id"
 			class="header-contacts__item"
-			:to="item.href"
+			:to="contact.href"
 			:additional-attrs="{
 				rel: 'nofollow',
 			}"
 			is-external-link
 		>
-			<template v-if="item.icon" #icon-left>
-				<UiIcon :name="item.icon" :size="UiIconSize.S24" />
+			<template v-if="contact.icon" #icon-left>
+				<UiIcon :name="contact.icon" :size="UiIconSize.S24" />
 			</template>
 
-			{{ item.label }}
+			{{ contact.label }}
 		</UiLink>
 	</nav>
 </template>
@@ -27,10 +27,12 @@
 
 	const headerContactsItems: HeaderContactsItem[] = [
 		{
+			id: useId(),
 			label: 'techts@mail.ru',
 			href: 'mailto:techts@mail.ru',
 		},
 		{
+			id: useId(),
 			label: '+7 987 654-32-10',
 			href: 'tel:+79876543210',
 		},

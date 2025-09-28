@@ -16,7 +16,7 @@
 	import type { UiLinkAttributes, UiLinkComponent, UiLinkProps } from '@ui/uiLink/types';
 	import { NuxtLink } from '#components';
 
-	const { isExternalLink, to, target, disabled, theme = 'default', additionalAttrs } = defineProps<UiLinkProps>();
+	const { isExternalLink, to, target, disabled, theme = 'default', additionalAttrs, isButton } = defineProps<UiLinkProps>();
 
 	const component = computed<UiLinkComponent>(() => {
 		if (isExternalLink) {
@@ -27,12 +27,12 @@
 			return NuxtLink;
 		}
 
-		return 'div';
+		return isButton ? 'button' : 'div';
 	});
 
 	const attributes = computed<UiLinkAttributes>(() => {
 		const attrs: Record<string, any> = {};
-		const isDisabled = disabled || !to;
+		const isDisabled = disabled || (!isButton && !to);
 
 		if (isDisabled) {
 			attrs['aria-disabled'] = 'true';
@@ -55,7 +55,7 @@
 			return attrs as UiLinkAttributes;
 		}
 
-		if (!isDisabled) {
+		if (!isDisabled && !isButton) {
 			attrs.to = to;
 
 			if (target) {
