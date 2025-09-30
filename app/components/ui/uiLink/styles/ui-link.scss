@@ -3,9 +3,6 @@
 
 	// Typography
 	--link-font-family: var(--primary-font);
-	--link-font-size: #{fluid($font-size-xs, $font-size-s, $laptop, $laptop-xxl)};
-	--link-line-height: 1;
-	--link-font-weight: #{$font-weight-medium};
 	--link-text-transform: none;
 
 	// Color
@@ -31,10 +28,7 @@
 	color: var(--link-color);
 	display: inline-flex;
 	font-family: var(--link-font-family);
-	font-size: var(--link-font-size);
-	font-weight: var(--link-font-weight);
 	gap: var(--link-gap);
-	line-height: var(--link-line-height);
 	text-decoration: none;
 	text-decoration-color: currentcolor;
 	text-decoration-thickness: var(--link-underline-thickness);
@@ -85,6 +79,18 @@
 
 			// TODO: Заблокированный цвет для белых ссылок
 			--link-color-disabled: var(--gray-30);
+		}
+
+		&-white-light {
+			--link-color: var(--white-trans-40);
+
+			// TODO: Ховер, активный цвет для светлых ссылок
+			--link-color-hover: var(--white-trans-80);
+			--link-color-focus: var(--white-trans-80);
+			--link-color-active: var(--white-trans-80);
+
+			// TODO: Заблокированный цвет для светлых ссылок
+			--link-color-disabled: var(--white-trans-20);
 		}
 	}
 }

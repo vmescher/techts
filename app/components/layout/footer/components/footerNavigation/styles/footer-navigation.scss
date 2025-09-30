@@ -1,0 +1,5 @@
+.footer-navigation {
+	display: flex;
+	flex-direction: column;
+	gap: fluid($gutter * 4, $gutter * 5, $laptop, $laptop-xxl);
+}

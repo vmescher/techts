@@ -1,0 +1,6 @@
+.footer-callback {
+	&__caption {
+		margin-bottom: fluid($gutter * 6, $gutter * 8, $laptop, $laptop-xxl);
+		max-width: 220px;
+	}
+}

@@ -1,0 +1,22 @@
+.footer-contacts {
+	&__caption {
+		margin-bottom: fluid($gutter * 6, $gutter * 8, $laptop, $laptop-xxl);
+		max-width: 270px;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: fluid($gutter * 4, $gutter * 5, $laptop, $laptop-xxl);
+	}
+
+	&__messengers {
+		display: flex;
+		flex-direction: column;
+		gap: $gutter * 2;
+	}
+
+	&__address {
+		max-width: 220px;
+	}
+}

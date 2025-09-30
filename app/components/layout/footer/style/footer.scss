@@ -1,0 +1,16 @@
+.footer {
+	background-color: var(--gray-90);
+	color: var(--white-10);
+
+	&__container {
+		padding-block: fluid($gutter * 6, $gutter * 10, $laptop, $laptop-xxl);
+	}
+
+	&__top {
+		margin-bottom: 200px;
+
+		@include media-max($laptop-xl) {
+			margin-bottom: 140px;
+		}
+	}
+}

@@ -1,4 +1,7 @@
 import type { RouteLocationRaw } from '#vue-router';
+import type { SizeType } from '@ui/constants/SizeType';
+import type { ThemeType } from '@ui/constants/ThemeType';
+import type { WeightType } from '@ui/constants/WeightType';
 import type { AnchorHTMLAttributes } from 'vue';
 
 export interface UiLinkProps {
@@ -7,7 +10,9 @@ export interface UiLinkProps {
 	isButton?: boolean;
 	target?: '_blank' | '_self';
 	disabled?: boolean;
-	theme?: 'default' | 'white';
+	theme?: ThemeType;
+	size?: SizeType;
+	weight?: WeightType;
 	additionalAttrs?: AnchorHTMLAttributes;
 }
 

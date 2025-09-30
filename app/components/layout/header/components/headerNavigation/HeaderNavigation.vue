@@ -56,22 +56,22 @@
 		{
 			id: useId(),
 			titleKey: 'header_nav_payment',
-			to: '#payment',
+			to: '/#payment',
 		},
 		{
 			id: useId(),
 			titleKey: 'header_nav_contacts',
-			to: '#contacts',
+			to: '/#contacts',
 		},
 		{
 			id: useId(),
 			titleKey: 'header_nav_about',
-			to: '#about',
+			to: '/#about',
 		},
 		{
 			id: useId(),
 			titleKey: 'header_nav_brands',
-			to: '#brands',
+			to: '/#brands',
 		},
 	];
 

@@ -21,8 +21,9 @@
 <script setup lang="ts">
 	import type { UiButtonProps } from '@ui/uiButton/types';
 	import { NuxtLink } from '#components';
+	import { ThemeType } from '@ui/constants/ThemeType';
 
-	const { tag = 'button', type = 'button', disabled, attrs, to, target, theme = 'default',
+	const { tag = 'button', type = 'button', disabled, attrs, to, target, theme = ThemeType.default,
 	} = defineProps<UiButtonProps>();
 
 	const safeAttrs = computed(() => {
@@ -69,7 +70,7 @@
 	const classNames = computed(() => {
 		return {
 			'ui-button--disabled': disabled,
-			[`ui-button--theme-${theme}`]: theme,
+			[`ui-button--theme-${theme}`]: Boolean(theme),
 		};
 	});
 

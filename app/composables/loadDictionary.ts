@@ -1,4 +1,4 @@
-import type { Dictionary } from '~/types/dictionariesStore';
+import type { Dictionary } from '~/types/dictionaries-store';
 
 export async function loadDictionary(namespace: string) {
 	const { $apiModule, $dictionariesStore } = useNuxtApp();

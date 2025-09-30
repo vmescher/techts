@@ -4,7 +4,9 @@
 			<slot name="icon-left" />
 		</span>
 
-		<slot />
+		<UiCaption :size :weight inline class="ui-link__text">
+			<slot />
+		</UiCaption>
 
 		<span v-if="$slots['icon-right']" class="ui-link__icon">
 			<slot name="icon-right" />
@@ -15,8 +17,11 @@
 <script setup lang="ts">
 	import type { UiLinkAttributes, UiLinkComponent, UiLinkProps } from '@ui/uiLink/types';
 	import { NuxtLink } from '#components';
+	import { SizeType } from '@ui/constants/SizeType';
+	import { ThemeType } from '@ui/constants/ThemeType';
+	import { WeightType } from '@ui/constants/WeightType';
 
-	const { isExternalLink, to, target, disabled, theme = 'default', additionalAttrs, isButton } = defineProps<UiLinkProps>();
+	const { isExternalLink, to, target, disabled, theme = ThemeType.default, weight = WeightType.medium, size = SizeType.s, additionalAttrs, isButton } = defineProps<UiLinkProps>();
 
 	const component = computed<UiLinkComponent>(() => {
 		if (isExternalLink) {

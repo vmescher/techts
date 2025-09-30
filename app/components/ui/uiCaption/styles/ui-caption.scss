@@ -1,0 +1,74 @@
+.ui-caption {
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	&--inline {
+		display: inline;
+		vertical-align: middle;
+	}
+
+	&--uppercase {
+		text-transform: uppercase;
+	}
+
+	&--no-wrap {
+		white-space: nowrap;
+	}
+
+	&--size-xs {
+		font-size: $font-size-xs;
+		line-height: 1.2;
+	}
+
+	&--size-s {
+		font-size: fluid($font-size-xs, $font-size-s, $laptop, $laptop-xxl);
+		line-height: 1.375;
+	}
+
+	&--size-m {
+		font-size: $font-size-m;
+		line-height: 1.4;
+	}
+
+	&--size-l {
+		font-size: $font-size-l;
+		line-height: 1.2;
+	}
+
+	&--size-xl {
+		font-size: fluid($font-size-l, $font-size-xl, $laptop, $laptop-xxl);;
+		line-height: 1.375;
+	}
+
+	&--size-xxl {
+		font-size: $font-size-2xl;
+		line-height: 1.2;
+	}
+
+	&--size-xxxl {
+		font-size: $font-size-3xl;
+		line-height: 1.1;
+	}
+
+	&--size-xxxxl {
+		font-size: $font-size-title;
+		line-height: 1.04;
+	}
+
+	&--weight-300 {
+		font-weight: 300;
+	}
+
+	&--weight-400 {
+		font-weight: 400;
+	}
+
+	&--weight-500 {
+		font-weight: 500;
+	}
+
+	&--weight-600 {
+		font-weight: 600;
+	}
+}

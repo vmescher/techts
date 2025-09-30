@@ -1,13 +1,15 @@
 <template>
-	<nav class="header-contacts">
+	<address
+		itemscope
+		itemtype="https://schema.org/Organization"
+		class="header-contacts"
+	>
 		<UiLink
 			v-for="contact in headerContactsItems"
 			:key="contact.id"
 			class="header-contacts__item"
 			:to="contact.href"
-			:additional-attrs="{
-				rel: 'nofollow',
-			}"
+			:itemprop="contact.itemProp"
 			is-external-link
 		>
 			<template v-if="contact.icon" #icon-left>
@@ -16,7 +18,7 @@
 
 			{{ contact.label }}
 		</UiLink>
-	</nav>
+	</address>
 </template>
 
 <script setup lang="ts">
@@ -30,11 +32,13 @@
 			id: useId(),
 			label: 'techts@mail.ru',
 			href: 'mailto:techts@mail.ru',
+			itemProp: 'email',
 		},
 		{
 			id: useId(),
 			label: '+7 987 654-32-10',
 			href: 'tel:+79876543210',
+			itemProp: 'telephone',
 		},
 	];
 </script>

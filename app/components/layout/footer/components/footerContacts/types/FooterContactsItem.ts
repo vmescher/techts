@@ -1,7 +1,6 @@
-export interface HeaderContactsItem {
+export interface FooterContactsItem {
 	id: string;
 	href: string;
 	label: string;
 	itemProp?: string;
-	icon?: string;
 }

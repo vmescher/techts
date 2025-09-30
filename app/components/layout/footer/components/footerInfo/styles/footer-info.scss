@@ -1,0 +1,21 @@
+.footer-info {
+	display: flex;
+	flex-direction: column;
+
+	&__logo {
+		margin-bottom: fluid($gutter * 8, $gutter * 10, $laptop, $laptop-xxl);
+		width: 85px;
+
+		@include media-max($laptop-xxl) {
+			width: 70px;
+		}
+	}
+
+	&__title {
+		margin-bottom: fluid($gutter * 6, $gutter * 8, $laptop, $laptop-xxl);
+	}
+
+	&__description {
+		max-width: 241px;
+	}
+}

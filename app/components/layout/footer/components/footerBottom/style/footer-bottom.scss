@@ -1,0 +1,14 @@
+.footer-bottom {
+	color: var(--white-trans-40);
+	display: flex;
+	gap: $gutter * 5;
+
+	&__developer {
+		margin-left: auto;
+	}
+
+	&__policy,
+	&__email {
+		line-height: 1.375;
+	}
+}

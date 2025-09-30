@@ -12,10 +12,6 @@
 		display: flex;
 		gap: $gutter * 10;
 		padding-block: fluid($gutter * 4, $gutter * 5, $laptop, $laptop-xxl);
-
-		@include media-max($laptop-xxl) {
-			gap: fluid($gutter * 4, $gutter * 6, $laptop, $laptop-xxl);
-		}
 	}
 
 	&__navigation {
