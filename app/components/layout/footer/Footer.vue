@@ -1,6 +1,6 @@
 <template>
 	<footer class="footer">
-		<UiContainer fluid class="footer__container">
+		<UiContainer class="footer__container">
 			<FooterTop class="footer__top" />
 			<FooterBottom class="footer__bottom" />
 		</UiContainer>

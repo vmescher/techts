@@ -1,0 +1,9 @@
+.main-page {
+	padding-bottom: 140px;
+
+	&__section {
+		&:not(:last-child) {
+			margin-bottom: 140px;
+		}
+	}
+}

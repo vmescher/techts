@@ -130,5 +130,26 @@
 			// TODO: Заблокированный цвет для primary кнопок
 			--btn-bg-disabled: var(--gray-30);
 		}
+
+		&-white {
+			--btn-color: var(--gray-90);
+
+			// TODO: Ховер, активный цвет для primary кнопок
+			--btn-color-hover: var(--gray-90);
+			--btn-color-focus: var(--gray-90);
+			--btn-color-active: var(--gray-90);
+
+			// TODO: Заблокированный цвет для primary кнопок
+			--btn-color-disabled: var(--gray-90);
+
+			// TODO: Ховер, активный цвет для primary кнопок
+			--btn-bg: var(--white-10);
+			--btn-bg-hover: var(--primary-10);
+			--btn-bg-focus: var(--primary-10);
+			--btn-bg-active: var(--primary-10);
+
+			// TODO: Заблокированный цвет для primary кнопок
+			--btn-bg-disabled: var(--gray-30);
+		}
 	}
 }

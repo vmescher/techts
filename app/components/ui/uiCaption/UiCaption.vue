@@ -3,6 +3,7 @@
 		:is="tag"
 		:class="uiCaptionClasses"
 		class="ui-caption"
+		v-bind="$attrs"
 	>
 		<slot></slot>
 	</component>

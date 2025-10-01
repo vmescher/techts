@@ -1,6 +1,6 @@
 <template>
 	<component
-		:is="tag"
+		:is="buttonComponent"
 		v-bind="safeAttrs"
 		class="ui-button"
 		:class="classNames"
@@ -25,6 +25,14 @@
 
 	const { tag = 'button', type = 'button', disabled, attrs, to, target, theme = ThemeType.default,
 	} = defineProps<UiButtonProps>();
+
+	const buttonComponent = computed(() => {
+		if (tag === 'NuxtLink') {
+			return NuxtLink;
+		}
+
+		return tag;
+	});
 
 	const safeAttrs = computed(() => {
 		const attributes: Record<string, any> = { ...(attrs || {}) };
@@ -53,7 +61,7 @@
 				}
 			}
 		}
-		else if (tag === NuxtLink) {
+		else if (tag === 'NuxtLink') {
 			if (!disabled) {
 				if (to) {
 					attributes.to = to;

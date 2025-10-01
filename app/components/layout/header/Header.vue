@@ -1,6 +1,6 @@
 <template>
 	<header class="header">
-		<UiContainer fluid class="header__container">
+		<UiContainer class="header__container">
 			<NuxtLink to="/" class="header__logo">
 				<img src="/img/logo.svg" :alt="t('common_company_name')">
 			</NuxtLink>

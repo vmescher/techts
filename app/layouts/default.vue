@@ -2,9 +2,7 @@
 	<div class="default">
 		<Header class="default__header" />
 
-		<UiContainer tag="main" class="default__main">
-			<slot />
-		</UiContainer>
+		<slot />
 
 		<Footer class="default__footer" />
 	</div>
