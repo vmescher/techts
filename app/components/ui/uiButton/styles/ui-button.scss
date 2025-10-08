@@ -1,6 +1,8 @@
 .ui-button {
 	--btn-gap: #{fluid($gutter * 3, $gutter * 6, $laptop, $laptop-xxl)};
 	--btn-min-height: 53px;
+	--btn-padding-block: #{$gutter * 3};
+	--btn-padding-inline: #{fluid($gutter * 4, $gutter * 6, $laptop, $laptop-xxl)};
 
 	// Typography
 	--btn-font-family: var(--primary-font);
@@ -60,8 +62,8 @@
 	justify-content: space-between;
 	line-height: var(--btn-line-height);
 	min-height: var(--btn-min-height);
-	padding-block: $gutter * 3;
-	padding-inline: fluid($gutter * 4, $gutter * 6, $laptop, $laptop-xxl);
+	padding-block: var(--btn-padding-block);
+	padding-inline: var(--btn-padding-inline);
 	text-decoration: none;
 	transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 	user-select: none;
@@ -134,22 +136,48 @@
 		&-white {
 			--btn-color: var(--gray-90);
 
-			// TODO: Ховер, активный цвет для primary кнопок
+			// TODO: Ховер, активный цвет для white кнопок
 			--btn-color-hover: var(--gray-90);
 			--btn-color-focus: var(--gray-90);
 			--btn-color-active: var(--gray-90);
 
-			// TODO: Заблокированный цвет для primary кнопок
+			// TODO: Заблокированный цвет для white кнопок
 			--btn-color-disabled: var(--gray-90);
 
-			// TODO: Ховер, активный цвет для primary кнопок
+			// TODO: Ховер, активный цвет для white кнопок
 			--btn-bg: var(--white-10);
 			--btn-bg-hover: var(--primary-10);
 			--btn-bg-focus: var(--primary-10);
 			--btn-bg-active: var(--primary-10);
 
-			// TODO: Заблокированный цвет для primary кнопок
+			// TODO: Заблокированный цвет для white кнопок
 			--btn-bg-disabled: var(--gray-30);
+		}
+
+		&-white-light {
+			--btn-color: var(--black-50);
+			--btn-color-hover: var(--black-50);
+			--btn-color-focus: var(--black-50);
+			--btn-color-active: var(--black-50);
+			--btn-color-disabled: var(--gray-50);
+			--btn-bg: var(--white-10);
+			--btn-bg-hover: var(--gray-10);
+			--btn-bg-focus: var(--gray-10);
+			--btn-bg-active: var(--gray-10);
+			--btn-bg-disabled: var(--white-10);
+			--btn-border-color: var(--gray-30);
+			--btn-border-hover-color: var(--gray-10);
+			--btn-border-focus-color: var(--gray-10);
+			--btn-border-active-color: var(--gray-10);
+			--btn-border-disabled-color: var(--gray-30);
+		}
+	}
+
+	&--size {
+		&-s {
+			--btn-min-height: 46px;
+			--btn-padding-block: #{$gutter * 2};
+			--btn-padding-inline: #{fluid($gutter * 4, $gutter * 5, $laptop, $laptop-xxl)};
 		}
 	}
 }

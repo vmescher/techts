@@ -1,6 +1,7 @@
 html {
 	color-scheme: light dark;
 	font-size: 100%;
+	scroll-behavior: smooth;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -22,6 +23,7 @@ body {
 	-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 	font-weight: $font-weight-regular;
 	line-height: $line-height-base;
+
 }
 
 html, body, #__nuxt {

@@ -21,9 +21,10 @@
 <script setup lang="ts">
 	import type { UiButtonProps } from '@ui/uiButton/types';
 	import { NuxtLink } from '#components';
+	import { SizeType } from '@ui/constants/SizeType';
 	import { ThemeType } from '@ui/constants/ThemeType';
 
-	const { tag = 'button', type = 'button', disabled, attrs, to, target, theme = ThemeType.default,
+	const { tag = 'button', type = 'button', disabled, attrs, to, target, theme = ThemeType.default, size = SizeType.m,
 	} = defineProps<UiButtonProps>();
 
 	const buttonComponent = computed(() => {
@@ -79,6 +80,7 @@
 		return {
 			'ui-button--disabled': disabled,
 			[`ui-button--theme-${theme}`]: Boolean(theme),
+			[`ui-button--size-${size}`]: Boolean(size),
 		};
 	});
 

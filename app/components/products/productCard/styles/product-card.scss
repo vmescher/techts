@@ -1,0 +1,104 @@
+.product-card {
+	background-color: var(--gray-10);
+	border-radius: $radius-lg;
+	display: block;
+	min-height: 400px;
+	padding: $gutter * 6;
+	position: relative;
+	transition: background-color .3s ease-in-out;
+
+	&__image-wrapper {
+		aspect-ratio: 1 / 1;
+		position: relative;
+		width: 100%;
+	}
+
+	&__image {
+		inset: 0;
+		position: absolute;
+	}
+
+	&__img,
+	&__scheme {
+		height: 100%;
+		object-fit: contain;
+		transition: opacity .3s ease-in-out;
+		width: 100%;
+	}
+
+	&__img {
+		opacity: 0;
+
+		&--shown {
+			opacity: 1;
+		}
+	}
+
+	&__info {
+		align-items: center;
+		bottom: 0;
+		display: flex;
+		gap: $gutter * 12;
+		justify-content: space-between;
+		left: 0;
+		padding: inherit;
+		position: absolute;
+		width: 100%
+	}
+
+	&__link {
+		align-items: center;
+		background-color: var(--white-10);
+		border-radius: 100px;
+		display: flex;
+		flex-shrink: 0;
+		height: 40px;
+		justify-content: flex-end;
+		opacity: 0;
+		padding-block: $gutter * 2;
+		padding-inline: $gutter * 3;
+		transition: opacity .3s ease-in-out;
+		width: 60px;
+	}
+
+	&__name {
+		flex: 1 1 100%;
+		hyphens: auto;
+		overflow-wrap: break-word;
+		text-decoration: none;
+	}
+
+	&--type-accent {
+		background-color: var(--primary-10);
+		mask-image: url('~/assets/img/product_mask.svg');
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: 100% 100%;
+
+		& .product-card {
+			&__img,
+			&__link{
+				opacity: 1;
+			}
+
+			&__scheme {
+				opacity: 0;
+			}
+		}
+	}
+
+	@include hover {
+		background-color: var(--primary-10);
+
+		& .product-card {
+			&__img,
+			&__link{
+				opacity: 1;
+			}
+
+			&__scheme {
+				opacity: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+.popular-products {
+	&__title-row {
+		margin-bottom: $gutter * 12;
+	}
+
+	&__list {
+		display: grid;
+		gap: $gutter * 3;
+		grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+	}
+}

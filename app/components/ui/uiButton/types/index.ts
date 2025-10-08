@@ -1,4 +1,5 @@
 import type { RouteLocationRaw } from '#vue-router';
+import type { SizeType } from '@ui/constants/SizeType';
 import type { ThemeType } from '@ui/constants/ThemeType';
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'vue';
 
@@ -12,4 +13,5 @@ export interface UiButtonProps {
 	target?: '_self' | '_blank';
 	attrs?: Record<string, any> | AnchorHTMLAttributes | ButtonHTMLAttributes;
 	theme?: ThemeType;
+	size?: SizeType;
 }

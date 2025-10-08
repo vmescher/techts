@@ -72,8 +72,8 @@ export default defineNuxtConfig({
 	},
 	i18n: {
 		locales: [
-			{ code: 'en', iso: 'en-US', name: 'English' },
-			{ code: 'ru', iso: 'ru-RU', name: 'Русский' },
+			{ code: 'ru', language: 'ru-RU', name: 'Русский' },
+			{ code: 'en', language: 'en-US', name: 'English' },
 		],
 		defaultLocale: 'ru',
 		detectBrowserLanguage: {
@@ -81,6 +81,7 @@ export default defineNuxtConfig({
 			cookieKey: 'i18n_redirected',
 			redirectOn: 'root',
 		},
+		baseUrl: 'https://my-nuxt-app.com',
 		vueI18n: '~/i18n/i18n.config.ts',
 	},
 });
