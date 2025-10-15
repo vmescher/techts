@@ -22,6 +22,10 @@
 		}
 	}
 
+	&__caption {
+		white-space: pre-line
+	}
+
 	&__icon {
 		color: var(--gray-30);
 	}

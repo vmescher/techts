@@ -1,9 +1,11 @@
 {
-	"advantages_section_shipping": "Доставка<br /> по всей России",
-	"advantages_section_discount": "Система скидок для<br /> постоянных клиентов",
-	"advantages_section_fast_shipping": "Отгрузка в день<br /> оформления заказа",
-	"advantages_section_experience": "На рынке<br /> с 1998 года",
-	"advantages_section_products": "Более 20 000<br /> товаров в наличии",
+	"advantages_section_shipping": "Доставка\n  по всей России",
+	"advantages_section_discount": "Система скидок для\n постоянных клиентов",
+	"advantages_section_fast_shipping": "Отгрузка в день\n оформления заказа",
+	"advantages_section_experience": "На рынке\n с 1998 года",
+	"advantages_section_products": "Более 20 000\n товаров в наличии",
 	"popular_products_section_title": "Популярная продукция",
-	"popular_products_section_all": "Вся продукция"
+	"popular_products_section_all": "Вся продукция",
+	"top_brands_section_title": "Наши бренды",
+	"top_brands_section_all": "Все бренды"
 }

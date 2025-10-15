@@ -71,7 +71,7 @@
 		{
 			id: useId(),
 			titleKey: 'header_nav_brands',
-			to: '/#brands',
+			to: '/#top-brands',
 		},
 	];
 

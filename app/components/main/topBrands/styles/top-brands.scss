@@ -1,0 +1,19 @@
+.top-brands {
+	margin: 0 auto;
+	max-width: 930px;
+
+	&__title-row {
+		margin-bottom: $gutter * 12;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: $gutter * 10;
+	}
+
+	&__item {
+		border-top: 1px solid var(--gray-20);
+		padding-top: $gutter * 10;
+	}
+}

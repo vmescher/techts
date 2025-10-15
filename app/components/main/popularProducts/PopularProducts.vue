@@ -8,7 +8,7 @@
 				:weight="WeightType.semibold"
 				class="popular-products__title"
 			>
-				{{ t('popular_products_section_title') }}
+				{{ t("popular_products_section_title") }}
 			</UiCaption>
 
 			<template #actions>
@@ -16,8 +16,10 @@
 					class="popular-products__all"
 					:theme="ThemeType.whiteLight"
 					:size="SizeType.s"
+					tag="NuxtLink"
+					to="/products"
 				>
-					{{ t('popular_products_section_all') }}
+					{{ t("popular_products_section_all") }}
 					<template #icon-right>
 						<UiIcon name="arrow_right" :size="UiIconSize.S16" />
 					</template>
@@ -43,28 +45,30 @@
 	import { WeightType } from '@ui/constants/WeightType';
 	import { UiIconSize } from '@ui/uiIcon/types';
 
+	await loadDictionary('sections');
+
 	const { t } = useI18n();
 
 	const products = [
 		{
-			id: '1',
+			id: useId(),
 			name: 'Клиновый',
 			image: '/img/products/product.png',
 			schemeImage: '/img/products/product-scheme-1.png',
 		},
 		{
-			id: '2',
+			id: useId(),
 			name: 'Вариаторный',
 			image: '/img/products/product.png',
 			schemeImage: '/img/products/product-scheme-2.png',
 		},
 		{
-			id: '3',
+			id: useId(),
 			name: 'Поликлиновый',
 			image: '/img/products/product.png',
 		},
 		{
-			id: '4',
+			id: useId(),
 			name: 'Вариаторный',
 			image: '/img/products/product.png',
 			schemeImage: '/img/products/product-scheme-3.png',
