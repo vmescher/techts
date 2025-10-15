@@ -43,7 +43,10 @@
 				{{ t("brands_products_link") }}
 
 				<template #icon-right>
-					<UiIcon name="arrow_right" :size="UiIconSize.S16" />
+					<UiIcon
+						name="arrow_right"
+						:size="UiIconSize.S16"
+					/>
 				</template>
 			</UiLink>
 		</div>
