@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url';
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
 
 export default defineNuxtConfig({
-	modules: ['@nuxtjs/i18n', '@nuxt/eslint', '@nuxt/image', '@pinia/nuxt'],
+	modules: ['@nuxtjs/i18n', '@nuxt/eslint', '@nuxt/image', '@pinia/nuxt', '@vee-validate/nuxt'],
 	devtools: { enabled: true },
 	compatibilityDate: '2025-09-05',
 	runtimeConfig: {

@@ -4,7 +4,7 @@
 			<li v-for="advantage in advantages" :key="advantage.id" class="advantages-section__item">
 				<UiIcon :name="advantage.icon" :size="UiIconSize.S48" class="advantages-section__icon" />
 				<UiCaption tag="p" :size="SizeType.m" class="advantages-section__caption">
-					<span v-html="t(advantage.titleKey)" />
+					{{ t(advantage.titleKey) }}
 				</UiCaption>
 			</li>
 		</ul>

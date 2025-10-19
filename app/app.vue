@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-	await loadDictionary('common');
+	await loadDictionaries(['common', 'validation']);
 </script>

@@ -36,6 +36,13 @@
 		}
 
 		&-xxl {
+			@include media-max($laptop-xxl) {
+				height: 28px;
+				width: 28px;
+			}
+		}
+
+		&-xxxl {
 			@include media-max($laptop-xl) {
 				height: 36px;
 				width: 36px;

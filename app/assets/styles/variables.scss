@@ -1,8 +1,11 @@
 :root {
 	// COLORS
 	--primary-10: hsl(240deg 100% 86% / 1);
+	--primary-20: hsl(240deg 30% 75% / 1);
+	--primary-40: hsl(240deg 100% 79% / 1);
 	--primary-50: hsl(240deg 41% 48% / 1);
 	--primary-60: hsl(240deg 22% 17% / 1);
+	--primary-70: hsl(240deg 21% 44% / 1);
 	--black-50: hsl(240deg 35% 8% / 1);
 	--white-10: hsl(240deg 100% 100% / 1);
 	--white-trans-20: hsl(240deg 100% 100% / .2);
@@ -11,8 +14,11 @@
 	--gray-10: hsl(240deg 12% 95% / 1);
 	--gray-20: hsl(250deg 12% 92% / 1);
 	--gray-30: hsl(250deg 8% 84% / 1);
+	--gray-40: hsl(250deg 3% 52% / 1);
 	--gray-50: hsl(240deg 4% 52% / 1);
+	--gray-60: hsl(250deg 6% 75% / 1);
 	--gray-90: hsl(0deg 0% 14% / 1);
+	--error: hsl(346deg 100% 58% / 1);
 
 	// FONTS
 	--primary-font: 'Nunito Sans';

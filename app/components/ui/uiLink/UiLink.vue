@@ -75,6 +75,7 @@
 		return {
 			'ui-link--disabled': disabled,
 			[`ui-link--theme-${theme}`]: theme,
+			[`ui-link--size-${size}`]: size,
 		};
 	});
 </script>

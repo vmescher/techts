@@ -9,12 +9,8 @@
 	--link-color: var(--black-50);
 	--link-color-hover: var(--primary-50);
 	--link-color-focus: var(--primary-50);
-
-	// TODO: Активный цвет для ссылок
 	--link-color-active: var(--primary-50);
-
-	// TODO: Заблокированный цвет для ссылок
-	--link-color-disabled: var(--primary-10);
+	--link-color-disabled: var(--gray-50);
 
 	// Border
 	--link-underline-thickness: 2px;
@@ -91,6 +87,16 @@
 
 			// TODO: Заблокированный цвет для светлых ссылок
 			--link-color-disabled: var(--white-trans-20);
+		}
+
+		&-primary {
+			--link-color: var(--primary-60);
+		}
+	}
+
+	&--size {
+		&-xl {
+			--link-gap: #{$gutter * 2};
 		}
 	}
 }
