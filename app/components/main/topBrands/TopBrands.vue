@@ -46,8 +46,6 @@
 	import { WeightType } from '@ui/constants/WeightType';
 	import { UiIconSize } from '@ui/uiIcon/types';
 
-	await loadDictionaries(['sections', 'brands']);
-
 	const { t } = useI18n();
 
 	const brands = [
@@ -64,6 +62,8 @@
 			description: 'Чешская торговая марка «HANSE» уверенно позиционирует себя на рынке как качественный и надежный продукт. Продукция HANSE Group s.r.o. – это пример соответствия заявленного и реального качества изделия. В производстве автозапчастей «HANSE» мы придерживаемся определенных',
 		},
 	];
+
+	await loadDictionaries(['sections', 'brands']);
 </script>
 
 <style src="@components/main/topBrands/styles/top-brands.scss" scoped lang="scss" />

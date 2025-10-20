@@ -7,5 +7,9 @@
 	"popular_products_section_title": "Популярная продукция",
 	"popular_products_section_all": "Вся продукция",
 	"top_brands_section_title": "Наши бренды",
-	"top_brands_section_all": "Все бренды"
+	"top_brands_section_all": "Все бренды",
+	"callback_section_title": "Бесплатная консультация",
+	"callback_section_subtitle": "Подберем ремень под вашу задачу.\n Введите ваш номер телефона, чтобы мы могли связаться с вами.",
+	"callback_section_contact_label": "Или свяжитесь с нами по номеру:",
+	"callback_section_submit_button": "Оставить заявку"
 }

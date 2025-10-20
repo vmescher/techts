@@ -19,10 +19,6 @@
 	const { value, errorMessage, meta } = useField(() => name);
 
 	const getErrorMessage = computed(() => {
-		return meta.touched ? errorMessage : '';
+		return meta.touched ? errorMessage.value : '';
 	});
 </script>
-
-<style scoped lang="scss">
-
-</style>

@@ -2,7 +2,7 @@
 	<UiInput
 		v-model="value"
 		v-mask="phoneMask"
-		name="phone"
+		:name
 		:placeholder
 		:error-message="getErrorMessage"
 		type="tel"
@@ -15,17 +15,14 @@
 	import { phoneMask } from '@components/forms/inputs/constants/masks';
 	import { AutoComplete } from '@ui/uiInput/constants/AutoComplete';
 
-	const { placeholder = '+7 (___) ___-__-__' } = defineProps<{
+	const { placeholder = '+7 (___) ___-__-__', name = 'phone' } = defineProps<{
+		name?: string;
 		placeholder?: string;
 	}>();
 
-	const { value, errorMessage, meta } = useField(() => 'phone');
+	const { value, errorMessage, meta } = useField(() => name);
 
 	const getErrorMessage = computed(() => {
-		return meta.touched ? errorMessage : '';
+		return meta.touched ? errorMessage.value : '';
 	});
 </script>
-
-<style scoped lang="scss">
-
-</style>

@@ -1,0 +1,20 @@
+.form-template {
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		gap: $gutter * 4;
+	}
+
+	&__agreement {
+		margin-top: $gutter * 5;
+		padding-inline: $gutter * 2;
+	}
+
+	&__submit {
+		align-items: center;
+		display: flex;
+		gap: $gutter * 2;
+		justify-content: flex-end;
+		margin-top: $gutter * 8;
+	}
+}

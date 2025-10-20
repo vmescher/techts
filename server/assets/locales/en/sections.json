@@ -7,5 +7,9 @@
 	"popular_products_section_title": "Popular products",
 	"popular_products_section_all": "All products",
 	"top_brands_section_title": "Our brands",
-	"top_brands_section_all": "All brands"
+	"top_brands_section_all": "All brands",
+	"callback_section_title": "Free consultation",
+	"callback_section_subtitle": "We will help you choose the right belt for your needs, enter your phone number so we can contact you.",
+	"callback_section_contact_label": "Or contact us at the number:",
+	"callback_section_submit_button": "Request a call back"
 }

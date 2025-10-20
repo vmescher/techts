@@ -1,4 +1,5 @@
 {
 	"validation_required": "Поле обязательно для заполнения",
-	"validation_phone": "Введите корректный номер телефона"
+	"validation_phone": "Введите корректный номер телефона",
+	"validation_string_max": "Введите не более {max} символов"
 }

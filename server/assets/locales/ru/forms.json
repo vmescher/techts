@@ -1,0 +1,10 @@
+{
+	"input_name_placeholder": "Введите имя" ,
+	"input_name_label": "Ваше имя",
+	"input_phone_placeholder": "Введите телефон",
+	"input_phone_label": "Ваш телефон",
+	"unrequired_field_note": "необязательно",
+	"form_agreement_text": "Я принимаю условия {terms} и даю {agreement}",
+	"form_agreement_terms": "пользовательского соглашения",
+	"form_agreement_privacy": "согласие на обработку персональных данных"
+}

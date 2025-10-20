@@ -1,0 +1,10 @@
+{
+	"input_name_placeholder": "Enter your name",
+	"input_name_label": "Your name",
+	"input_phone_placeholder": "Enter your phone",
+	"input_phone_label": "Your phone",
+	"unrequired_field_note": "optional",
+	"form_agreement_text": "I accept the {terms} and give {agreement}",
+	"form_agreement_terms": "terms of service",
+	"form_agreement_privacy": "consent to the processing of personal data"
+}

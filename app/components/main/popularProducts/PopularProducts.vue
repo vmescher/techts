@@ -45,8 +45,6 @@
 	import { WeightType } from '@ui/constants/WeightType';
 	import { UiIconSize } from '@ui/uiIcon/types';
 
-	await loadDictionary('sections');
-
 	const { t } = useI18n();
 
 	const products = [
@@ -74,6 +72,8 @@
 			schemeImage: '/img/products/product-scheme-3.png',
 		},
 	];
+
+	await loadDictionary('sections');
 </script>
 
 <style src="@components/main/popularProducts/styles/popular-products.scss" scoped lang="scss" />

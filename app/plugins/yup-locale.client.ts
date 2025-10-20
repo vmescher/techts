@@ -9,5 +9,8 @@ export default defineNuxtPlugin(() => {
 		mixed: {
 			required: () => t('validation_required'),
 		},
+		string: {
+			max: ({ max }) => t('validation_string_max', { max }),
+		},
 	});
 });

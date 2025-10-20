@@ -171,6 +171,24 @@
 			--btn-border-active-color: var(--gray-10);
 			--btn-border-disabled-color: var(--gray-30);
 		}
+
+		&-primary-dark {
+			--btn-color: var(--white-10);
+			--btn-color-hover: var(--white-10);
+			--btn-color-focus: var(--white-10);
+			--btn-color-active: var(--white-10);
+			--btn-color-disabled: var(--primary-80);
+			--btn-bg: var(--primary-60);
+			--btn-bg-hover: var(--primary-90);
+			--btn-bg-focus: var(--primary-90);
+			--btn-bg-active: var(--primary-90);
+			--btn-bg-disabled: var(--primary-90);
+			--btn-border-color: var(--primary-60);
+			--btn-border-hover-color: var(--primary-90);
+			--btn-border-focus-color: var(--primary-90);
+			--btn-border-active-color: var(--primary-90);
+			--btn-border-disabled-color: var(--primary-90);
+		}
 	}
 
 	&--size {

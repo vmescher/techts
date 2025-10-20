@@ -19,9 +19,9 @@
 	import HeaderContacts from '@components/layout/header/components/headerContacts/HeaderContacts.vue';
 	import HeaderNavigation from '@components/layout/header/components/headerNavigation/HeaderNavigation.vue';
 
-	await loadDictionary('header');
-
 	const { t } = useI18n();
+
+	await loadDictionary('header');
 </script>
 
 <style src="@components/layout/header/styles/header.scss" scoped />

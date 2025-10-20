@@ -15,8 +15,6 @@
 	import { SizeType } from '@ui/constants/SizeType';
 	import { UiIconSize } from '@ui/uiIcon/types';
 
-	await loadDictionary('sections');
-
 	const { t } = useI18n();
 
 	const advantages = [
@@ -46,6 +44,8 @@
 			icon: 'abstraction_4',
 		},
 	];
+
+	await loadDictionary('sections');
 </script>
 
 <style src="@components/main/advantagesSection/styles/advantages-section.scss" scoped lang="scss" />

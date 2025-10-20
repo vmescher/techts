@@ -8,12 +8,11 @@
 				:weight="WeightType.semibold"
 				class="callback-section__title"
 			>
-				Бесплатная консультация
+				{{ t(titleKey) }}
 			</UiCaption>
 
 			<UiCaption tag="p" :size="SizeType.m" :weight="WeightType.regular" class="callback-section__text">
-				Подберем ремень под вашу задачу.
-				Введите ваш номер телефона, чтобы мы могли связаться с вами.
+				{{ t(textKey) }}
 			</UiCaption>
 		</div>
 
@@ -24,7 +23,7 @@
 				:size="SizeType.m"
 				:weight="WeightType.regular"
 			>
-				Или свяжитесь с нами по номеру:
+				{{ t("callback_section_contact_label") }}
 			</UiCaption>
 			<UiLink
 				class="callback-section__phone"
@@ -45,17 +44,21 @@
 </template>
 
 <script setup lang="ts">
-	import CallbackForm from '@components/forms/callback/CallbackForm.vue';
+	import CallbackForm from '@components/main/callbackSection/CallbackForm.vue';
 	import { SizeType } from '@ui/constants/SizeType';
 	import { ThemeType } from '@ui/constants/ThemeType';
 	import { WeightType } from '@ui/constants/WeightType';
 	import { UiIconSize } from '@ui/uiIcon/types';
 
-	defineProps<{
-		sectionId: string;
+	const { sectionId = 'callback', titleKey = 'callback_section_title', textKey = 'callback_section_subtitle' } = defineProps<{
+		sectionId?: string;
 		titleKey?: string;
 		textKey?: string;
 	}>();
+
+	const { t } = useI18n();
+
+	await loadDictionary('sections');
 </script>
 
 <style src="@components/main/callbackSection/styles/callback-section.scss" scoped lang="scss" />

@@ -5,7 +5,10 @@ export interface UiInputProps {
 	id?: string;
 	labelKey?: string;
 	labelTag?: 'label' | 'span';
+	placeholderKey?: string;
+	placeholder?: string;
 	errorMessage?: string;
+	type?: string;
 	disabled?: boolean;
 	readonly?: boolean;
 	required?: boolean;

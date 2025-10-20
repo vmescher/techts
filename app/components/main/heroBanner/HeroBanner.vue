@@ -48,9 +48,9 @@
 	import { ThemeType } from '@ui/constants/ThemeType';
 	import { WeightType } from '@ui/constants/WeightType';
 
-	await loadDictionary('banners');
-
 	const { t } = useI18n();
+
+	await loadDictionary('banners');
 </script>
 
 <style src="@components/main/heroBanner/styles/hero-banner.scss" scoped lang="scss" />

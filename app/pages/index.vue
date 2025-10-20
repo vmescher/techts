@@ -5,7 +5,6 @@
 		<PopularProducts class="main-page__section" />
 		<TopBrands class="main-page__section" />
 		<CallbackSection section-id="callback" class="main-page__section" />
-		<CallbackSection section-id="callback" class="main-page__section" />
 	</UiContainer>
 </template>
 

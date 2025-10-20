@@ -1,0 +1,5 @@
+{
+	"validation_required": "This field is required.",
+	"validation_phone": "Please enter a valid phone number.",
+	"validation_string_max": "Please enter no more than {max} characters."
+}
